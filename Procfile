@@ -1,1 +1,1 @@
-web: gunicorn ton_nom_de_projet.wsgi
+web: gunicorn nerobet_project.wsgi
