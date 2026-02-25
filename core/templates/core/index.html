@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div style="text-align: center; padding: 80px 20px 120px 20px;">
+    <div class="reveal">
+        <span style="background: #E8EEFF; color: #1B4FD8; padding: 6px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">
+            Predictive AI Engine v5.2
+        </span>
+    </div>
+
+    <h1 class="reveal" style="font-family: 'Instrument Serif'; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 0.9; margin: 30px 0;">
+        L'intelligence artificielle au service de vos <em>paris</em>.
+    </h1>
+
+    <p class="reveal-slow" style="font-size: 1.3rem; color: #666; max-width: 750px; margin: 0 auto 50px auto; font-weight: 300; line-height: 1.5;">
+        Nero analyse les flux de données sportives en temps réel pour générer des rapports tactiques impartiaux et identifier les opportunités à haute probabilité.
+    </p>
+
+    {% if not user.is_authenticated %}
+        <div class="reveal" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="{% url 'register' %}" class="btn-primary" style="padding: 20px 45px; font-size: 1.1rem; border-radius: 14px; box-shadow: 0 10px 20px rgba(27, 79, 216, 0.2);">
+                Ouvrir un compte Nero
+            </a>
+            <a href="{% url 'login' %}" style="padding: 20px 45px; font-size: 1.1rem; color: var(--ink); text-decoration: none; font-weight: 600; border: 2px solid var(--border); border-radius: 14px;">
+                Se connecter
+            </a>
+        </div>
+    {% else %}
+        <div class="reveal">
+            <a href="{% url 'dashboard' %}" class="btn-primary" style="padding: 20px 45px; font-size: 1.1rem; border-radius: 14px;">
+                Accéder à mon Dashboard
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 100px;">
+    <div class="reveal" style="background: #FFF; padding: 40px; border-radius: 24px; border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 20px;">🧠</div>
+        <h3 style="font-family: 'Instrument Serif'; font-size: 1.8rem; margin-bottom: 15px;">Analyse Cognitive</h3>
+        <p style="color: #777; font-size: 0.95rem; line-height: 1.6;">L'IA Mistral Small traite des milliers de variables tactiques pour simuler le scénario le plus probable de chaque match.</p>
+    </div>
+
+    <div class="reveal" style="background: #FFF; padding: 40px; border-radius: 24px; border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 20px;">🎫</div>
+        <h3 style="font-family: 'Instrument Serif'; font-size: 1.8rem; margin-bottom: 15px;">Golden Tickets</h3>
+        <p style="color: #777; font-size: 0.95rem; line-height: 1.6;">Un algorithme de filtrage strict ne retient que les signaux dépassant les 75% de confiance statistique.</p>
+    </div>
+
+    <div class="reveal" style="background: #FFF; padding: 40px; border-radius: 24px; border: 1px solid var(--border);">
+        <div style="font-size: 2rem; margin-bottom: 20px;">🔒</div>
+        <h3 style="font-family: 'Instrument Serif'; font-size: 1.8rem; margin-bottom: 15px;">SaaS Privé</h3>
+        <p style="color: #777; font-size: 0.95rem; line-height: 1.6;">Utilisez vos propres clés API. Vos données de navigation et vos analyses restent strictement personnelles et chiffrées.</p>
+    </div>
+</div>
+
+<div class="reveal-slow" style="padding: 60px; background: #1A1A1A; color: white; border-radius: 30px; text-align: center; margin-bottom: 100px;">
+    <h2 style="font-family: 'Instrument Serif'; font-size: 2.5rem; margin-bottom: 20px;">Prêt pour le <em>décollage</em> ?</h2>
+    <p style="color: #AAA; max-width: 600px; margin: 0 auto 40px auto;">
+        Nero est un outil communautaire. Pour fonctionner gratuitement, il utilise vos propres accès aux services de données.
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: left;">
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">1. Clé Mistral AI</h4>
+            <p style="font-size: 0.85rem; color: #888;">Génère les rapports textuels. Inscription gratuite sur console.mistral.ai</p>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+            <h4 style="color: var(--accent); margin-bottom: 10px;">2. Clé Football-Data</h4>
+            <p style="font-size: 0.85rem; color: #888;">Fournit les classements officiels. Inscription sur football-data.org</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

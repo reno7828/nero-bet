@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class="auth-card reveal">
+    <h1 style="font-family: 'Instrument Serif'; font-size: 3.5rem; margin: 0 0 10px 0;">Rejoindre <em>Nero Bet</em></h1>
+    <p style="color: #666; margin-bottom: 35px; font-weight: 300;">Créez votre accès VIP en quelques secondes.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div style="text-align: left; margin-bottom: 5px;">
+                {{ field }}
+                {% if field.errors %}
+                    <div style="color: #C0392B; font-size: 0.75rem; margin: -10px 0 15px 5px; font-weight: 600;">
+                        {{ field.errors.0 }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; margin-top: 10px; font-size: 1rem;">
+            Créer mon compte
+        </button>
+    </form>
+
+    <p style="margin-top: 30px; font-size: 0.9rem; color: #888;">
+        Déjà membre ?
+        <a href="{% url 'login' %}" style="color: var(--accent); font-weight: 700; text-decoration: none;">Se connecter</a>
+    </p>
+</div>
+
+{% endblock %}

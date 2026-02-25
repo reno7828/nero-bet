@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="auth-card reveal" style="max-width: 550px;">
+    <h1 style="font-family: 'Instrument Serif'; font-size: 3rem; margin-bottom: 10px;">Configuration <em>API</em></h1>
+    <p style="color: #666; margin-bottom: 30px; font-weight: 300;">Laissez vide pour conserver vos clés actuelles.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div style="margin-bottom: 25px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <label style="font-weight: 700; font-size: 0.9rem;">Clé API Mistral</label>
+                {% if has_mistral %}
+                    <span style="font-size: 0.7rem; background: #EDFAF4; color: #0D7A4E; padding: 3px 10px; border-radius: 20px; font-weight: 800;">✓ CONFIGURÉE</span>
+                {% endif %}
+            </div>
+            <input type="password" name="mistral_key" placeholder="Entrez la nouvelle clé pour écraser..."
+                   style="border-color: {% if has_mistral %}#C2E7D5{% else %}var(--border){% endif %};">
+        </div>
+
+        <div style="margin-bottom: 35px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <label style="font-weight: 700; font-size: 0.9rem;">Clé API Football-Data</label>
+                {% if has_football %}
+                    <span style="font-size: 0.7rem; background: #EDFAF4; color: #0D7A4E; padding: 3px 10px; border-radius: 20px; font-weight: 800;">✓ CONFIGURÉE</span>
+                {% endif %}
+            </div>
+            <input type="password" name="football_key" placeholder="Entrez la nouvelle clé pour écraser..."
+                   style="border-color: {% if has_football %}#C2E7D5{% else %}var(--border){% endif %};">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 18px; font-size: 1rem;">
+            Enregistrer les modifications
+        </button>
+    </form>
+
+    <a href="{% url 'dashboard' %}" style="display: block; margin-top: 20px; font-size: 0.85rem; color: #888; text-decoration: none;">
+        Retour au Dashboard
+    </a>
+</div>
+{% endblock %}

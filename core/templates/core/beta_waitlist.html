@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class="auth-card reveal" style="max-width: 600px; padding: 60px 40px;">
+    <div style="width: 80px; height: 80px; background: #F4F1EA; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px auto;">
+        <span style="font-size: 2rem;">⏳</span>
+    </div>
+
+    <h1 style="font-family: 'Instrument Serif'; font-size: 3.5rem; margin-bottom: 20px; line-height: 1;">
+        Accès en <em>attente</em>
+    </h1>
+    
+    <p style="font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 40px; font-weight: 300;">
+        Merci <strong>{{ user.username }}</strong> ! Ton compte a été créé avec succès. <br><br>
+        Nero est actuellement en <strong>Bêta Privée</strong>. Pour garantir la stabilité de nos algorithmes, nous validons les accès manuellement par petits groupes.
+    </p>
+
+    <div style="background: #F9F8F4; border: 1px dashed var(--border); padding: 25px; border-radius: 20px; text-align: left; margin-bottom: 40px;">
+        <h3 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; color: var(--accent);">Prochaine étape :</h3>
+        <p style="font-size: 0.85rem; color: #555; margin: 0;">
+            L'équipe de <strong>Nerodia Lab</strong> analyse ta demande. Tu recevras un accès dès qu'une place se libère dans l'arène.
+        </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <a href="/" class="btn-primary" style="width: 100%; padding: 18px;">Retour à l'accueil</a>
+        
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; color:#888; text-decoration:underline; cursor:pointer; font-size:0.85rem;">
+                Se déconnecter et changer de compte
+            </button>
+        </form>
+    </div>
+</div>
+
+<p style="text-align: center; margin-top: 30px; font-size: 0.75rem; color: #AAA; text-transform: uppercase; letter-spacing: 2px;">
+    NERO-BET PROTOCOL // STATUS: PENDING_VALIDATION
+</p>
+
+{% endblock %}

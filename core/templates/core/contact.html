@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border: 2px solid #000; border-radius: 20px; box-shadow: 6px 6px 0px #000;">
+    <h1 style="font-family: 'Instrument Serif'; font-size: 2.5rem; margin-top: 0;">Contactez <em>Nerodia Lab</em></h1>
+    <p style="color: #666; margin-bottom: 30px;">Une question ou un bug ? Notre équipe vous répondra à l'adresse : <strong>{{ user.email }}</strong></p>
+
+    <form method="post">
+        {% csrf_token %}
+        <label style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem;">Sujet</label>
+        <input type="text" name="subject" placeholder="Ex: Problème de clé API" required style="width: 100%; padding: 12px; border: 2px solid #EEE; border-radius: 10px; margin-bottom: 20px; font-family: inherit;">
+
+        <label style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem;">Votre demande</label>
+        <textarea name="message" rows="6" placeholder="Détaillez votre message ici..." required style="width: 100%; padding: 12px; border: 2px solid #EEE; border-radius: 10px; margin-bottom: 20px; font-family: inherit; resize: none;"></textarea>
+
+        <button type="submit" class="btn-primary" style="width: 100%; border-radius: 10px; padding: 15px;">
+            Envoyer le message
+        </button>
+    </form>
+</div>
+{% endblock %}

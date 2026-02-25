@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div style="max-width: 850px; margin: 0 auto; line-height: 1.8; color: #1A1A1A; padding-bottom: 100px;">
+
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h1 style="font-family: 'Instrument Serif'; font-size: 3.5rem; margin-bottom: 10px;">Conditions Générales <em>d'Utilisation</em></h1>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #888; font-weight: 700;">Dernière mise à jour : Février 2026</p>
+    </div>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="font-family: 'Instrument Serif'; font-size: 1.8rem; border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 20px;">1. Acceptation des conditions</h2>
+        <p>L'accès et l'utilisation du service <strong>Nero Bet</strong>, édité par <strong>Nerodia Lab</strong>, sont soumis à l'acceptation sans réserve des présentes CGU. En créant un compte, vous reconnaissez avoir pris connaissance de ces conditions.</p>
+    </section>
+
+    <section style="margin-bottom: 40px; background: #FFF4F4; padding: 30px; border-radius: 20px; border: 1px solid #EBCACA;">
+        <h2 style="font-family: 'Instrument Serif'; font-size: 1.8rem; color: #C0392B; margin-top: 0;">2. Avertissement Légal & Responsabilité</h2>
+        <p><strong>Nero Bet est un outil d'aide à la décision basé sur l'Intelligence Artificielle.</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Les analyses et "Golden Tickets" fournis sont des probabilités informatiques et non des conseils financiers ou des certitudes de gain.</li>
+            <li><strong>Nerodia Lab</strong> ne pourra être tenu responsable des pertes financières, directes ou indirectes, résultant de l'utilisation de l'application ou de l'interprétation de ses analyses.</li>
+            <li>Le pari sportif comporte des risques de dépendance et d'endettement.</li>
+        </ul>
+        <p style="font-weight: 800; margin-top: 15px;">Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé).</p>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="font-family: 'Instrument Serif'; font-size: 1.8rem; border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 20px;">3. Utilisation des clés API</h2>
+        <p>Pour fonctionner, Nero Bet nécessite que l'utilisateur fournisse sa propre clé API Mistral. L'utilisateur est seul responsable de la confidentialité de sa clé et des coûts liés à son utilisation auprès de Mistral AI.</p>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="font-family: 'Instrument Serif'; font-size: 1.8rem; border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 20px;">4. Données Personnelles (RGPD)</h2>
+        <p>Conformément au RGPD, Nerodia Lab s'engage à :</p>
+        <ul style="margin-left: 20px;">
+            <li>Ne collecter que les données strictement nécessaires (email, pseudo).</li>
+            <li>Ne jamais revendre ou céder vos données à des tiers.</li>
+            <li>Vous accorder un droit d'accès et de suppression de vos données sur simple demande via la page contact.</li>
+        </ul>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+        <h2 style="font-family: 'Instrument Serif'; font-size: 1.8rem; border-bottom: 2px solid #1A1A1A; padding-bottom: 10px; margin-bottom: 20px;">5. Propriété Intellectuelle</h2>
+        <p>L'interface, le design, le logo "Nero Bet" et l'algorithme de traitement des données sont la propriété exclusive de <strong>Nerodia Lab</strong>. Toute reproduction est interdite.</p>
+    </section>
+
+    <div style="text-align: center; margin-top: 60px; padding: 40px; background: #FFFFFF; border: 2px solid #1A1A1A; border-radius: 20px; box-shadow: 6px 6px 0px #1A1A1A;">
+        <h3 style="margin-top: 0;">Besoin d'éclaircissements ?</h3>
+        <p style="color: #666;">Si vous avez des questions sur nos conditions, n'hésitez pas à nous contacter.</p>
+        <a href="{% url 'contact' %}" class="btn-primary" style="display: inline-block; margin-top: 10px;">Contacter Nerodia Lab</a>
+    </div>
+
+</div>
+{% endblock %}
