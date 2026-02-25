@@ -73,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'quest_control.wsgi.application'
+WSGI_APPLICATION = 'nerobet_project.wsgi.application'
 
 
 # Database
