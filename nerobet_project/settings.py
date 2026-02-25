@@ -73,7 +73,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'nerobet_project.wsgi.application'
+WSGI_APPLICATION = 'quest_control.wsgi.application'
 
 
 # Database
@@ -123,6 +123,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# CETTE LIGNE EST CELLE QUI MANQUE :
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Optionnel mais recommandé pour WhiteNoise
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -132,3 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
+
+
+DJ_SUPERUSER_PASSWORD = os.environ.get("ADMIN_PASSWORD")
